@@ -384,15 +384,17 @@ const numbersAngles = [
   ],
 ]
 
-export default ({ number }) => {
+function ClockDigit({ number }) {
   const numberAngles = useMemo(() => numbersAngles[number], [number])
   return (
     <div className="grid-container">
       {numberAngles.map((rowAngles, i) =>
         rowAngles.map(([angle1, angle2], j) => (
-          <ClockPiece className="grid-item" key={i + j} angle1={angle1} angle2={angle2} />
+          <ClockPiece className="grid-item" key={i + j} angle1={angle1} angle2={angle2}/>
         ))
       )}
     </div>
   )
 }
+
+export default ClockDigit
