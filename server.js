@@ -12,10 +12,10 @@ const PORT = process.env.PORT || 3001
 app.use(express.json())
 
 // Setup static directory to serve
-app.use(express.static(path.resolve('client', 'build')))
+app.use(express.static(path.resolve('client', 'dist')))
 
 app.get('/*', (req, res) => {
-  res.sendFile(path.resolve('client', 'build', 'index.html'))
+  res.sendFile(path.resolve('client', 'dist', 'index.html'))
 })
 
 // console.log that your server is up and running
