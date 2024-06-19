@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import ClockPiece from './ClockPiece'
 
 const numbersAngles = [
@@ -384,17 +384,19 @@ const numbersAngles = [
   ],
 ]
 
-function ClockDigit({ number }) {
-  const numberAngles = useMemo(() => numbersAngles[number], [number])
+export default function ({ number }) {
   return (
-    <div className="grid-container">
-      {numberAngles.map((rowAngles, i) =>
+    <div className="digit">
+      {numbersAngles[number].flatMap((rowAngles, i) =>
         rowAngles.map(([angle1, angle2], j) => (
-          <ClockPiece className="grid-item" key={i + j} angle1={angle1} angle2={angle2}/>
+          <ClockPiece
+            className="grid-item"
+            key={i * rowAngles.length + j}
+            angle1={angle1}
+            angle2={angle2}
+          />
         ))
       )}
     </div>
   )
 }
-
-export default ClockDigit

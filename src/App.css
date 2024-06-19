@@ -1,69 +1,21 @@
-:root {
-  --size: 46px;
-  --border: 2px;
-  --thickness: 4px;
+.circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.grid-container {
-  float: left;
+.digit {
   display: grid;
-  row-gap: 0;
   grid-template-columns: auto auto auto auto;
-}
-
-.grid-item {
-  padding: 0;
-  column-gap: 0;
-}
-
-.clock-piece {
-  position: relative;
-  height: var(--size);
-  width: var(--size);
-  background-color: #FFF;
-  border-radius: calc(var(--size) / 2 + var(--border));
-  border: var(--border) #AAA double;
 }
 
 .clock-hand {
   position: absolute;
-  height: calc(var(--size) / 2);
-  width: var(--thickness);
+  transform-origin: 50% 100%;
   background-color: #333;
-  left: calc(var(--size) / 2 - var(--thickness) / 2);
-  top: 0;
-  transform-origin: calc(var(--thickness) / 2) calc(var(--size) / 2);
+  height: 48%;
+  width: 12%;
   transition: transform 0.8s ease-in-out;
-}
-
-.clock-hand-0 {
-  transform: rotate(0deg);
-}
-
-.clock-hand-45 {
-  transform: rotate(45deg);
-}
-
-.clock-hand-90 {
-  transform: rotate(90deg);
-}
-
-.clock-hand-135 {
-  transform: rotate(135deg);
-}
-
-.clock-hand-180 {
-  transform: rotate(180deg);
-}
-
-.clock-hand-225 {
-  transform: rotate(225deg);
-}
-
-.clock-hand-270 {
-  transform: rotate(270deg);
-}
-
-.clock-hand-315 {
-  transform: rotate(315deg);
 }

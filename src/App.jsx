@@ -23,9 +23,20 @@ function App() {
   })
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+      }}
+    >
       {[hour, min, sec].map((x, i) => (
-        <ClockNumber key={i} style={{ margin: '10px 20px' }} number={x} />
+        <ClockNumber
+          key={i}
+          style={{ margin: '0 2%', width: '27%' }}
+          number={x}
+        />
       ))}
     </div>
   )
